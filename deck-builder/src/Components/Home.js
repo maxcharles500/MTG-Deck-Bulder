@@ -1,18 +1,23 @@
 import React from 'react'
 import Card from './Card'
-function Home({cards}) {
+
+function Home({cards, addSpells}) {
+    
 
     console.log('cardz' , cards)
     const mappedCards = () => {
         return cards.map(card => {
             
-             console.log(card)
-             return <Card card={card} key={card.id} />
+             
+             return <Card card={card} key={card} addSpells={addSpells}/>
         })
     }
 
+  
     return (
         <div>
+            
+            <h1>Cards...</h1>
             <h1>{mappedCards()}</h1> 
         </div>
     )
